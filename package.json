@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ahmedchlk.github.io/Weater-App",
+  "homepage": "https://ahmedchlk.github.io/Weather-App",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
