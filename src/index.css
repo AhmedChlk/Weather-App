@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(./assets/images/background.jpg) no-repeat center/cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.search-bar input {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    border-radius: 20px 0 0 20px;
+    color: #333;
+}
+
+.search-bar button {
+    padding: 0 15px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 20px 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button svg {
+    fill: none;
+    stroke: #333;
+    stroke-width: 2;
+}
+
+.change-button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.change-button-container button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.change-button-container button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#content-container {
+    flex: 1;
+}
+
+.footer {
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.github-link {
+    color: #ebebeb;
+    margin-left: 10px;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.github-link i {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.github-link:hover i {
+    color: #6e5494;
+}
