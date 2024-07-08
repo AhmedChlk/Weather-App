@@ -1,0 +1,41 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content:flex-start;
+    padding: 20px;
+}
+
+.meteo-card {
+    background-color: #f9f9f9ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: 0.2s;
+}
+.meteo-card:hover {
+    transform: scale(1.05);
+}
+.meteo-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.meteo-card h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.meteo-card p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 5px 0;
+    color: #666;
+}
+.meteo-card .meteo-price{
+    color: #111;
+}

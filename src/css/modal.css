@@ -1,0 +1,93 @@
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+.button {
+    position: relative;
+    width: 6em;
+    height: 4em;
+    border: none;
+    background: none;
+}
+
+.X, .Y {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 2em;
+    height: 1.5px;
+    background-color: #000;
+}
+
+.X {
+    transform: rotate(45deg);
+}
+
+.Y {
+    transform: rotate(-45deg);
+}
+
+.close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -40%;
+    left: 70%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    border: 1px solid #000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.button:hover {
+    background-color: rgb(210, 0, 0);
+}
+
+.button:active {
+    background-color: rgb(130, 0, 0); 
+}
+
+.button:hover .X, .button:hover .Y {
+    background-color: #fff;
+}
+
+.button:hover > .close {
+    animation: close 0.2s forwards 1.25s;
+}
+
+@keyframes close {
+    100% {
+        opacity: 1;
+    }
+}

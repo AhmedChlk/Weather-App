@@ -1,0 +1,16 @@
+.current-meteo-container{
+    background: url(../assets//images/current-meteo-bg.png);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 12px 24px;
+}
+.current-meteo-header{
+    display: flex;
+    justify-content: space-between;
+}
+.current-meteo-main{
+    display: flex;
+    justify-content: space-between;
+}

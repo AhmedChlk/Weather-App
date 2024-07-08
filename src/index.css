@@ -97,6 +97,8 @@ header {
 
 #content-container {
     flex: 1;
+    display: flex;
+    height: 100%;
 }
 
 .footer {
@@ -133,4 +135,9 @@ header {
 
 .github-link:hover i {
     color: #6e5494;
+}
+
+.content-container{
+    display: flex;
+    justify-content: space-around;
 }
