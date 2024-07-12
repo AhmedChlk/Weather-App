@@ -50,7 +50,7 @@ async function getWeatherData(location) {
 function showWeatherData(data) {
     showCurrentMeteo(data);
     showMoreDetails(data);
-    document.querySelector('.card-container').innerHTML='';
+    document.querySelector('.card-container').innerHTML= '';
     data.forecast.forecastday.forEach(element => {
         createCard(element);
     });
