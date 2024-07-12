@@ -1,0 +1,17 @@
+.current-meteo-details-container{
+    flex: 1;
+    background-color: #1e1e29;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 12px 0;
+    visibility: hidden;
+}
+.detail-item{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    
+}
+.detail-item p {
+    margin:  0 5px;
+}

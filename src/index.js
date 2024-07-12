@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
-import { showError, showCurrentMeteo } from './js/dom';
+import { showError, showCurrentMeteo ,showMoreDetails,createCard} from './js/dom';
 
 // Récupérer la ville recherchée par l'utilisateur
 const form = document.querySelector('form');
@@ -49,4 +49,10 @@ async function getWeatherData(location) {
 
 function showWeatherData(data) {
     showCurrentMeteo(data);
+    showMoreDetails(data);
+    document.querySelector('.card-container').innerHTML='';
+    data.forecast.forecastday.forEach(element => {
+        createCard(element);
+    });
 }
+

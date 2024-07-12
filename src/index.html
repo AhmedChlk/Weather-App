@@ -25,24 +25,52 @@
     </header>
     <main>
         <div id="content-container">
-            <div class="current-meteo-container">
-                <div class="current-meteo-header">
-                    <div class="current-meteo-header-info">
-                        <h2 id="location"></h2>
-                        <p id="date"></p>
+            <div class="today-weather">
+                <div class="current-meteo-container">
+                    <div class="current-meteo-header">
+                        <div class="current-meteo-header-info">
+                            <h2 id="location"></h2>
+                            <p id="date"></p>
+                        </div>
+                        <div class="current-meteo-header-time">
+                            <p id="time"></p>
+                        </div>
                     </div>
-                    <div class="current-meteo-header-time">
-                        <p id="time"></p>
+                    <div class="current-meteo-main">
+                        <div class="current-meteo-temperature">
+                            <p id="current-temperature"></p>
+                            <p id="min-max-temperature"></p>
+                            <p id="current-sensation"></p>
+                        </div>
+                        <div class="current-meteo-image-container"></div>
                     </div>
                 </div>
-                <div class="current-meteo-main">
-                    <div class="current-meteo-temperature">
-                        <p id="current-temperature"></p>
-                        <p id="min-max-temperature"></p>
-                        <p id="current-sensation"></p>
+                <div class="current-meteo-details-container">
+                    <h2 id="today-meteo-detail">Today's weather details</h2>
+                    <div class="detail-item">
+                        <img src="./assets/images/SVG/Thermal-Sensation.svg" alt="Thermal-Sensation">
+                        <p>Thermal Sensation</p>
+                        <p class="thermal-value"></p>
                     </div>
-                    <div class="current-meteo-image-container"></div>
-                </div>
+                    <div class="detail-item">
+                        <img src="./assets/images/SVG/air-humidity.svg" alt="air-humidity">
+                        <p>Air Humidity</p>
+                        <p class="humidity-value"></p>
+                    </div>
+                    <div class="detail-item">
+                        <img src="./assets/images/SVG/Rain-Proba.svg" alt="Rain-Proba">
+                        <p>Rain Probability</p>
+                        <p class="rain-value"></p>
+                    </div>
+                    <div class="detail-item">
+                        <img src="./assets/images/SVG/Uv-index.svg" alt="Uv-index">
+                        <p>UV Index</p>
+                        <p class="uv-value"></p>
+                    </div>
+                </div>            
+            </div>
+            <div class="forecast-weather-container">
+
             </div>
         </div>
     </main>

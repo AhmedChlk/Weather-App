@@ -1,5 +1,7 @@
 import '../css/modal.css';
 import '../css/current.css';
+import '../css/weather-detail.css';
+import '../css/forecast-weather.css';
 
 function showError(message) {
     const body = document.querySelector('body');
@@ -84,9 +86,78 @@ function showCurrentMeteo(data) {
         // Ajout de l'image dans le conteneur
         imageContainer.innerHTML = ''; // Clear any existing images
         imageContainer.appendChild(img);
+        document.querySelector('.current-meteo-container').style.visibility = 'visible';
+
     } else {
         console.error("One or more elements are null");
     }
 }
+function showMoreDetails(data) {
+    const current = data.current;
 
-export { showError, showCurrentMeteo };
+    // Afficher la sensation thermique
+    document.querySelector('.thermal-value').textContent = `${current.feelslike_c} °C`;
+
+    // Afficher l'humidité de l'air
+    document.querySelector('.humidity-value').textContent = `${current.humidity} %`;
+
+    // Afficher la probabilité de pluie
+    document.querySelector('.rain-value').textContent = `${current.precip_mm} mm`;
+
+    // Afficher l'indice UV
+    document.querySelector('.uv-value').textContent = current.uv;
+    document.querySelector(".current-meteo-details-container").style.visibility = 'visible';
+}
+function createCard(dayData) {
+
+    // Extraire les données nécessaires
+    const date = dayData.date;
+    const conditionText = dayData.day.condition.text;
+    const conditionIcon = `https:${dayData.day.condition.icon}`;
+    const maxTemp = dayData.day.maxtemp_c;
+    const minTemp = dayData.day.mintemp_c;
+    const avgHumidity = dayData.day.avghumidity;
+    const chanceOfRain = dayData.day.daily_chance_of_rain;
+    const uvIndex = dayData.day.uv;
+
+    // Créer les éléments HTML pour la carte
+    const card = document.createElement('div');
+    card.className = 'forecast-card';
+
+    const dateElement = document.createElement('h3');
+    dateElement.textContent = date;
+    card.appendChild(dateElement);
+
+    const iconElement = document.createElement('img');
+    iconElement.src = conditionIcon;
+    iconElement.alt = conditionText;
+    card.appendChild(iconElement);
+
+    const conditionElement = document.createElement('p');
+    conditionElement.textContent = conditionText;
+    card.appendChild(conditionElement);
+
+    const tempElement = document.createElement('p');
+    tempElement.textContent = `Max: ${maxTemp} °C / Min: ${minTemp} °C`;
+    card.appendChild(tempElement);
+
+    const humidityElement = document.createElement('p');
+    humidityElement.textContent = `Humidity: ${avgHumidity} %`;
+    card.appendChild(humidityElement);
+
+    const rainElement = document.createElement('p');
+    rainElement.textContent = `Chance of Rain: ${chanceOfRain} %`;
+    card.appendChild(rainElement);
+
+    const uvElement = document.createElement('p');
+    uvElement.textContent = `UV Index: ${uvIndex}`;
+    card.appendChild(uvElement);
+
+    // Ajouter la carte à la section des prévisions
+    document.querySelector('.card-container').appendChild(card);
+    document.querySelector(".forecast-weather-container").style.visibility = 'visible';
+}
+
+
+
+export { showError, showCurrentMeteo ,showMoreDetails,createCard    };
