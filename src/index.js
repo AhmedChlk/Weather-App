@@ -31,7 +31,7 @@ form.addEventListener('submit', async (event) => {
 
 async function getWeatherData(location) {
     const apiKey = 'e9497b296f0a4448b75164057240407';
-    const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3`;
+    const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3`;
     const response = await fetch(apiUrl);
     console.log("Response status: ", response.status); // Log le statut de la réponse
 
