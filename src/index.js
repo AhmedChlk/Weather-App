@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
-import { showError, showCurrentMeteo ,showMoreDetails,createCard} from './js/dom';
+import { showError, showCurrentMeteo, showMoreDetails, createCard } from './js/dom';
 
 // Récupérer la ville recherchée par l'utilisateur
 const form = document.querySelector('form');
@@ -28,7 +28,6 @@ form.addEventListener('submit', async (event) => {
     form.reset();
 });
 
-
 async function getWeatherData(location) {
     const apiKey = 'e9497b296f0a4448b75164057240407';
     const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3`;
@@ -46,13 +45,19 @@ async function getWeatherData(location) {
     return data;
 }
 
-
 function showWeatherData(data) {
     showCurrentMeteo(data);
     showMoreDetails(data);
-    document.querySelector('.card-container').innerHTML= '';
+
+    const cardContainer = document.querySelector('.card-container');
+    if (!cardContainer) {
+        console.error("Element with class 'card-container' not found in the DOM");
+        return;
+    }
+
+    cardContainer.innerHTML = ''; // Clear previous cards
+
     data.forecast.forecastday.forEach(element => {
         createCard(element);
     });
 }
-
